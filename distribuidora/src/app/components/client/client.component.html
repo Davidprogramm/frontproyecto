@@ -1,0 +1,189 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">                    
+                    <button class="btn btn-primary w-100" > Agregar cliente</button>
+    
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">                    
+                    <button class="btn btn-primary w-100"  (click)="listarClientes()"> Listar clientes</button>
+    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">                    
+                    <button class="btn btn-primary w-100" (click)="abrirCliente()"> Buscar cliente</button>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <div *ngIf="listaCliente">
+
+        <form   class="container mt-4" (ngSubmit)="capturarNombre(id)">
+            <label for="nombre">ID:</label>
+            <input type="text" id="id" [(ngModel)]="id" name="id">
+            <button  class="btn btn-primary" type="submit">Capturar</button>
+          </form>
+        
+          <div>
+            <table class="table container">
+              <thead>
+                <tr>
+                  <th scope="col">Identificacion</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Telefono</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let usuari of usuarioBusqueda">
+                  <td>{{ usuari.identificacion }}</td>
+                  <td>{{ usuari.nombre }}</td>
+                  <td>{{ usuari.apellido }}</td>
+                  <td>{{ usuari.email }}</td>
+                  <td>{{ usuari.telefono }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <button class="btn btn-primary"  type="submit" (click)="salirListaCliente()">Salir</button> 
+    </div>
+   
+      
+
+
+</div>
+
+<div *ngIf="lista"> 
+
+    <table class="table container">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Identificacion</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefono</th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let usuari of usuario?.slice(0, 6); let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ usuari.identificacion }}</td>
+                <td>{{ usuari.nombre }}</td>
+                <td>{{ usuari.apellido }}</td>
+                <td>{{ usuari.email }}</td>
+                <td>{{ usuari.telefono }}</td>
+              </tr>
+        </tbody>
+      </table>    
+    <tbody>
+
+
+
+        
+            <button class="btn btn-primary"  type="submit" (click)="salirListaClientes()">Salir</button> 
+       
+ 
+            
+</div>
+
+
+
+
+
+
+    <!-- Formulario Agregar-->
+
+ <!-- <div class="container">
+    <h2 class="text-primary">Ingresar Nuevo Cliente</h2>
+    <div class="row mt-3">
+        <div class="col">
+            <form #FormContacto="ngForm" >
+                <div class="input-group mb-3">  
+                    <label class="input-group-prepend" for="identificacion">
+                        <span class="input-group-text" >Identificacion</span>
+                    </label>
+                    <input class="form-control" type="text" name="Id" #identificacion="ngModel" [(ngModel)]=".identificacion" required pattern="[0-9]+">   
+                    <span *ngIf="identificacion.touched && !identificacion.valid">
+                        Apellido es obligatorio
+                </span>
+                </div>
+
+                <div class="input-group mb-3">
+                    <label class="input-group-prepend" for="nombre">
+                        <span class="input-group-text" >Nombre</span>
+                    </label>
+                    <input type="text" name="nombre"  class="form-control" #nombre="ngModel" [(ngModel)]="inicio.nombre" required pattern="[a-z A-Z]+">  
+                    <span *ngIf="nombre.touched && !nombre.valid">
+                        Nombre es obligatorio
+                    </span> 
+                </div>
+
+                <div class="input-group mb-3">
+                    <label class="input-group-prepend" for="Apellido">
+                        <span class="input-group-text" >Apellido</span>
+                    </label>
+                    <input type="text" name="apellido"  class="form-control" #apellido="ngModel" [(ngModel)]="inicio.apellido" required pattern="[a-z A-Z]+">   
+                    <span *ngIf="apellido.touched && !apellido.valid">
+                        Apellido es obligatorio
+                    </span> 
+                </div>
+
+                <div class="input-group mb-3">
+                    <label class="input-group-prepend" for="Correo">
+                        <span class="input-group-text" >Correo</span>
+                    </label>
+                    <input type="email" name="correo"  class="form-control" #correo="ngModel" [(ngModel)]="inicio.correo"  required pattern="[a-z A-Z]+"> 
+                    <span *ngIf="correo.touched && !correo.valid">
+                        Correo es Oligatorio
+                    </span>  
+                </div>
+
+                <div class="input-group mb-3">
+                    <label class="input-group-prepend " for="Telefono">
+                        <span class="input-group-text " >Telefono</span>
+                    </label>
+                    <input type="text" name="telefono"  class="form-control" #telefono="ngModel" [(ngModel)]="inicio.telefono" required pattern="[a-z A-Z]+">
+                    <span *ngIf="telefono.touched &&!telefono.valid">
+                        Telefono Es Obligatorio
+                    </span>   
+                </div>                                
+                                         
+            </form>
+
+
+        </div>
+    </div>
+
+
+</div> -->
+
+
+
+ <!--  Buscar-->
+
+
+
+
+
+               
+
+
+

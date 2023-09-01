@@ -1,0 +1,83 @@
+
+<!--  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">Distribuidora 18</a>
+                <!-- Menu de Navegacion-->
+                <!-- <button 
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Mostrar/Ocultar Menu"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu de Navegacion  (click)="inicioPagina()
+                <div class="collapse navbar-collapse" id="menu">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"> <a href="#" class="nav-link">Inicio</a></li>
+                            <li class="nav-item"> <a href="#" class="nav-link" (click)="inicioPagina()">Clientes</a></li>
+
+                                 <!-- DropDown-->
+                            <!-- <li class="nav-item dropdown"> 
+
+                                <a href="#" 
+                                
+                                class="nav-link dropdown-toggle"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                id="dropdown-menu"
+                                >
+
+                                    Clientes
+                                </a>
+
+                                <ul class="dropdown-menu"
+                                aria-labelledby="dropdown-menu">
+                                <li><a href="" class="dropdown-item">Buscar Todos los Clientes</a></li>
+                                <li><a href="" class="dropdown-item">Buscar Cliente</a></li>
+                                <li><a href="" class="dropdown-item">Borrar Cliente</a></li>
+                                <li></li>
+                                <li></li>
+                            
+                                </ul>
+                            </li> 
+
+                            <li class="nav-item"> <a href="#" class="nav-link">Pedidos</a></li>
+                            <li class="nav-item"> <a href="#" class="nav-link">Vendedores</a></li>
+                        </ul>
+
+                       <form action="" class="d-flex">
+                        <input type="search" class="form-control me-2" placeholder="Buscar" aria-label="Buscar">
+                        <button class="btn btn-outline-primary" type="button">Buscar</button>
+                       </form>     
+                </div>
+
+            </div>
+
+    </nav>    
+   
+  <div *ngIf="inicio"> 
+     <app-client >
+     </app-client>
+            
+    </div> -->
+<div class="container"> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" [routerLink]="['/home']">Home</a>
+        <a class="navbar-brand"[routerLink]="['/cliente']">Cliente</a>
+        <a class="navbar-brand"[routerLink]="['/vendedor']">Vendedor</a>
+     
+    </nav>
+</div>
+
+   
+<router-outlet></router-outlet>
+
+
+
